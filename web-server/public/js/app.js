@@ -3,7 +3,7 @@ console.log("client side javascript file is loaded");
 const getForecast = (location) => {
   firstMessage.textContent = "Loading . . .";
   secondMessage.textContent = "";
-  fetch(`http://localhost:3000/weather?address=${location}`)
+  fetch(`/weather?address=${location}`)
     .then((response) => {
       if (response.status === 200 || response.status === 201) {
         response.json().then((data) => {
