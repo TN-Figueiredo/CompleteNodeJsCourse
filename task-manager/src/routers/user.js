@@ -89,7 +89,7 @@ router.patch("/users/me", auth, async (req, res) => {
     await user.save();
     return res.status(200).send(user);
   } catch (e) {
-    res.status(400).send(e);
+    res.status(400).send();
   }
 });
 
@@ -100,7 +100,7 @@ router.delete("/users/me", auth, async (req, res) => {
     sendCancelEmail(req.user.email, req.user.name);
     return res.status(200).send(req.user);
   } catch (e) {
-    res.status(500).send(e);
+    res.status(500).send();
   }
 });
 
